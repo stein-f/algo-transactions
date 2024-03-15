@@ -47,6 +47,7 @@ func main() {
 
 	log.Info().Msgf("found %d transactions with amount %d", len(filteredTransactions), filterOnAmount)
 
+	// sum the amounts to get a total for the date range
 	var totalAmount uint64
 	for _, txn := range filteredTransactions {
 		totalAmount += txn.AssetTransferTransaction.Amount
